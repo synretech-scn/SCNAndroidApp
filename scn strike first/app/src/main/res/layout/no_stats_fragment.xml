@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="450px"
+        android:background="@drawable/userstats_slider" />
+
+    <Button
+        android:id="@+id/buyStats"
+        android:layout_width="576px"
+        android:layout_height="101px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20px"
+        android:background="@drawable/blue_round"
+        android:onClick="onClick"
+        android:tag="mwar"
+        android:text="Buy Now"
+        android:textColor="@color/white"
+        android:textSize="36px" />
+
+    <LinearLayout
+        android:id="@+id/trialParent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_marginLeft="25px"
+            android:layout_marginRight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px">
+
+            <View
+                android:layout_toLeftOf="@+id/orText"
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_height="@dimen/drop_separator_height"
+                android:background="@drawable/dropdown_separator" />
+
+            <TextView
+                android:id="@+id/orText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text=" OR "
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="32px" />
+
+            <View
+                android:layout_toRightOf="@+id/orText"
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_height="@dimen/drop_separator_height"
+                android:background="@drawable/dropdown_separator" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_marginTop="15px"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:text="Try Complete User Stat Package for 10 days."
+            android:textColor="@color/white"
+            android:textSize="32px" />
+
+        <TextView
+            android:layout_marginTop="15px"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:text="Absolutely Free!!"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="36px" />
+
+
+        <RelativeLayout
+            android:id="@+id/trialVersion"
+            android:layout_width="576px"
+            android:layout_height="101px"
+            android:layout_marginTop="20px"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/white_blue_round"
+            android:onClick="onClick"
+            android:clickable="true">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Start Trial Version"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:textSize="36px" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/trialVersionUsed"
+        android:layout_marginTop="20px"
+        android:layout_width="wrap_content"
+        android:padding="20px"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:text="Your trial period is over. Please purchase XB Pro package to analyze your stats further."
+        android:textColor="@color/white"
+        android:textSize="32px" />
+</LinearLayout>

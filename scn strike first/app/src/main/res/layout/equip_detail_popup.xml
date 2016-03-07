@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="visible"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:id="@+id/centerName"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:text="Equipment Details"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+
+        <TextView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/game_buttons_margin"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@drawable/text_color_selector"
+            android:text="Skip"
+            android:textSize="25px"
+            android:clickable="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/ballText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Bowling Ball Name"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/bowlingBallList"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/patternText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Pattern Name"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/patternNameList"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/patLengthText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Pattern Length"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/patternLengthList"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/typeText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Competition Type"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/competitionTypeList"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+
+    <TextView
+        android:id="@+id/statName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnParent"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25px"
+        android:text="Note: Go to Equipment Settings page to add or edit equipment details."
+        android:textColor="#64ffffff"
+        android:textSize="26px" />
+
+    <Button
+        android:id="@+id/okEquip"
+        android:layout_width="350px"
+        android:layout_height="110px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50px"
+        android:background="@drawable/blue_round"
+        android:tag="mwar"
+        android:text="OK"
+        android:textColor="@color/white"
+        android:textSize="36px" />
+
+</LinearLayout>

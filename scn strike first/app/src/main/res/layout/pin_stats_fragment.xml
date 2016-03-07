@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/toggleLay"
+        android:layout_centerHorizontal="true"
+        android:layout_width="522px"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="21px"
+        android:layout_height="67px"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/pinView"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:text="Pin View"
+            android:textColor="@color/white"
+            android:textSize="30px"
+            android:onClick="onClick"
+            android:layout_height="match_parent"
+            android:background="@drawable/blue_left_semi_round"
+            android:tag="mwar" />
+
+        <Button
+            android:id="@+id/listView"
+            android:layout_width="0px"
+            android:text="List View"
+            android:textColor="@color/white"
+            android:textSize="30px"
+            android:onClick="onClick"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/blue_right_outline_semi_round"
+            android:tag="mwar" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/statsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="103px">
+
+        <RelativeLayout
+            android:id="@+id/scrollChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <RelativeLayout
+                android:id="@+id/pinSpare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/pinSpareHeader"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="68px"
+                    android:background="@drawable/item_small_background"
+                    android:tag="close">
+
+                    <TextView
+                        android:id="@+id/laneNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="Single Pin Spares"
+                        android:textColor="@color/white"
+                        android:textSize="25px" />
+
+                    <Button
+                        android:id="@+id/indicator"
+                        android:layout_width="36px"
+                        android:layout_height="36px"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20px"
+                        android:background="@drawable/plus_selector"
+                        android:clickable="false"
+                        android:focusable="false"></Button>
+                </RelativeLayout>
+
+                <ListView
+                    android:id="@+id/pinSpareList"
+                    android:layout_width="930px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/pinSpareHeader"
+                    android:divider="@null"
+                    android:listSelector="@android:color/transparent"
+                    android:visibility="gone"></ListView>
+
+                <RelativeLayout
+                    android:id="@+id/singlePinSpareParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="68px"
+                        android:background="@drawable/item_small_background"
+                        android:tag="close">
+
+                        <TextView
+                            android:id="@+id/laneNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20px"
+                            android:text="Single Pin Spares"
+                            android:textColor="@color/white"
+                            android:textSize="25px" />
+
+                        <Button
+                            android:id="@+id/indicator"
+                            android:visibility="gone"
+                            android:layout_width="36px"
+                            android:layout_height="36px"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20px"
+                            android:background="@drawable/plus_selector"
+                            android:clickable="false"
+                            android:focusable="false"></Button>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pinsLayout"
+                        android:layout_width="530px"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="100px"
+                        android:gravity="center_horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/row4"
+                            android:layout_width="match_parent"
+                            android:layout_height="111px"
+                            android:orientation="horizontal">
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView7"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="45px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView8"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="92px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView9"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="105px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView10"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="85px" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/row3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/row4"
+                            android:layout_marginTop="-5px"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/pinText7"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="45px"
+                                android:layout_marginTop="10px"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView4"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="13px" />
+
+                            <TextView
+                                android:id="@+id/pinText8"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="20px"
+                                android:layout_marginTop="10px"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView5"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="18px" />
+
+                            <TextView
+                                android:id="@+id/pinText9"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="25px"
+                                android:layout_marginTop="10px"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView6"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="7px" />
+
+                            <TextView
+                                android:id="@+id/pinText10"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="15px"
+                                android:layout_marginTop="10px"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/row2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/row3"
+                            android:layout_marginTop="-5px"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="75px">
+
+                            <TextView
+                                android:id="@+id/pinText4"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="45px"
+                                android:layout_marginTop="10px"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView2"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="10px" />
+
+                            <TextView
+                                android:id="@+id/pinText5"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="27px"
+                                android:layout_marginTop="10px"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView3"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="13px" />
+
+                            <TextView
+                                android:id="@+id/pinText6"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="20px"
+                                android:layout_marginTop="10px"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/row1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/row2"
+                            android:layout_marginTop="-35px"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="140px">
+
+                            <TextView
+                                android:id="@+id/pinText2"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="45px"
+                                android:layout_marginTop="40px"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+
+                            <com.tribaltech.android.util.PinView
+                                android:id="@+id/pinView1"
+                                android:layout_width="45px"
+                                android:layout_height="111px"
+                                android:layout_marginLeft="20px" />
+
+                            <TextView
+                                android:id="@+id/pinText3"
+                                android:layout_width="62px"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="26px"
+                                android:layout_marginTop="40px"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="18px" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/pinText1"
+                            android:layout_width="62px"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/row1"
+                            android:layout_marginLeft="260px"
+                            android:layout_marginTop="6px"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="18px" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/errorMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginRight="20px"
+                        android:layout_marginTop="200px"
+                        android:gravity="center"
+                        android:text="You have no stats. Please play more games."
+                        android:textColor="#FFF"
+                        android:textSize="35px"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!-- Multi Pin Spare -->
+
+            <RelativeLayout
+                android:id="@+id/multiSpare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pinSpare"
+                android:layout_marginTop="30px"
+                android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/multiPinSpareHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="68px"
+                        android:background="@drawable/item_small_background"
+                        android:tag="close">
+
+                        <TextView
+                            android:id="@+id/laneNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20px"
+                            android:text="Multi Pin Spares"
+                            android:textColor="@color/white"
+                            android:textSize="25px" />
+
+                        <Button
+                            android:id="@+id/indicator"
+                            android:layout_width="36px"
+                            android:layout_height="36px"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20px"
+                            android:background="@drawable/plus_selector"
+                            android:clickable="false"
+                            android:focusable="false"></Button>
+                    </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/multiPinSpareParent"
+                    android:layout_width="530px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60px"
+                    android:visibility="gone"></RelativeLayout>
+
+                <ListView
+                    android:id="@+id/multiPinSpareList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/multiPinSpareHeader"
+                    android:divider="@null"
+                    android:listSelector="@android:color/transparent"
+                    android:visibility="gone"></ListView>
+            </RelativeLayout>
+
+            <!-- Splits -->
+
+            <RelativeLayout
+                android:id="@+id/splits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/multiSpare"
+                android:layout_marginTop="30px"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/splitsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="68px"
+                    android:background="@drawable/item_small_background"
+                    android:tag="close">
+
+                    <TextView
+                        android:id="@+id/laneNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="Splits"
+                        android:textColor="@color/white"
+                        android:textSize="25px" />
+
+                    <Button
+                        android:id="@+id/indicator"
+                        android:layout_width="36px"
+                        android:layout_height="36px"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20px"
+                        android:background="@drawable/plus_selector"
+                        android:clickable="false"
+                        android:focusable="false"></Button>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/splitsPinParent"
+                    android:layout_width="530px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60px"
+                    android:visibility="gone"></RelativeLayout>
+
+                <ListView
+                    android:id="@+id/splitsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/splitsHeader"
+                    android:divider="@null"
+                    android:listSelector="@android:color/transparent"
+                    android:visibility="gone"></ListView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

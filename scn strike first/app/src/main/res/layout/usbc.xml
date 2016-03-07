@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="45px"
+            android:layout_height="33px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/game_buttons_margin"
+            android:background="@drawable/menu_selector"
+            android:onClick="toggle"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:id="@+id/centerName"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Leaderboards"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#0000"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_marginTop="20px"
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:background="@drawable/item_large_background"
+            android:tag="mlar" >
+
+            <Button
+                android:layout_width="390px"
+                android:layout_height="198px"
+                android:layout_marginLeft="30px"
+                android:layout_centerVertical="true"
+                android:background="@drawable/xb"
+                />
+
+            <Button
+                android:id="@+id/interCollege"
+                android:layout_width="180px"
+                android:layout_height="80px"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30px"
+                android:onClick="onClick"
+                android:layout_centerVertical="true"
+                android:text="View"
+                android:textSize="36px"
+                android:background="@drawable/blue_round"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="40px"
+            android:background="@drawable/item_large_background"
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:tag="mlar" >
+
+            <Button
+                android:layout_width="390px"
+                android:layout_height="198px"
+                android:layout_marginLeft="30px"
+                android:layout_centerVertical="true"
+                android:background="@drawable/oc"
+                />
+
+            <Button
+                android:id="@+id/usbcOpen"
+                android:layout_width="180px"
+                android:onClick="onClick"
+                android:layout_height="80px"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30px"
+                android:layout_centerVertical="true"
+                android:text="View"
+                android:textSize="36px"
+                android:background="@drawable/blue_round"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/item_large_background"
+            android:layout_marginTop="20px"
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:tag="mlar" >
+
+            <Button
+                android:layout_width="390px"
+                android:layout_height="198px"
+                android:layout_marginLeft="30px"
+                android:layout_centerVertical="true"
+                android:background="@drawable/wc"
+                />
+
+            <Button
+                android:id="@+id/usbcWomen"
+                android:layout_width="180px"
+                android:layout_height="80px"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30px"
+                android:layout_centerVertical="true"
+                android:text="View"
+                android:onClick="onClick"
+                android:textSize="36px"
+                android:background="@drawable/blue_round"
+                android:gravity="center" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

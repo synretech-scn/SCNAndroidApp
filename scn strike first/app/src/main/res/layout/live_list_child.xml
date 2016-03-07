@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+
+    android:layout_width="match_parent"
+    android:layout_height="110px"
+    android:background="@drawable/item_large_background">
+
+    <TextView
+        android:id="@+id/playerName"
+        android:layout_width="330px"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40px"
+        android:text="Sharp Shooter"
+        android:textColor="@color/white"
+        android:textSize="32px" />
+
+    <LinearLayout
+        android:id="@+id/frameParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="405px"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/frameCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="36px" />
+
+        <TextView
+            android:id="@+id/frameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frames"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="567px"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/scores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="36px" />
+
+        <TextView
+            android:id="@+id/scoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="22px"
+        android:layout_height="36px"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20px"
+        android:background="@drawable/arrow"
+        android:tag="mlar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/dropdown_separator" />
+
+</RelativeLayout>

@@ -1,0 +1,192 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context="com.tribaltech.android.scnstrikefirst.LeaderboardFilter">
+
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="visible"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:text="Filters"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+
+        <RelativeLayout
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/game_buttons_margin"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:text="Done"
+                android:textSize="25px"
+                android:clickable="false"
+                android:focusable="false" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/item_small_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:text="Sort By"
+            android:textColor="#FFF"
+            android:textSize="25px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/typeText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/leaderboardType"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <LinearLayout
+        android:id="@+id/centerfragmentParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/item_small_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:text="Bowlers"
+            android:textColor="#FFF"
+            android:textSize="25px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/bowlersText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/bowlers"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+</LinearLayout>

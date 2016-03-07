@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/coach_view_bg"
+    tools:context="com.tribaltech.android.scnstrikefirst.CoachView">
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="70px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="90px"
+            android:visibility="visible"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/game_buttons_margin"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="gone"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:id="@+id/centerName"
+            android:layout_width="800px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/noItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="550px"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="No active player on this lane."
+            android:textColor="@color/white"
+            android:textSize="32px" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/coachViewList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:dividerHeight="0px"
+        android:listSelector="@android:color/transparent"
+        android:visibility="visible" />
+
+</LinearLayout>

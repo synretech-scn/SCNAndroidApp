@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="visible"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:id="@+id/centerName"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+
+        <TextView
+            android:id="@+id/collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/game_buttons_margin"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:text="Collapse"
+            android:textSize="25px"
+            android:onClick="onClick"
+            android:clickable="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/callParent"
+        android:layout_width="match_parent"
+        android:layout_height="108px"
+        android:layout_marginTop="6px">
+
+        <TextView
+            android:id="@+id/lanesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:singleLine="true"
+            android:text="Available Lanes : "
+            android:textColor="#FFF"
+            android:textSize="32px" />
+
+        <TextView
+            android:id="@+id/lanes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5px"
+            android:layout_toRightOf="@+id/lanesLabel"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="32px" />
+
+        <Button
+            android:id="@+id/callCenter"
+            android:layout_width="180px"
+            android:layout_height="70px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40px"
+            android:background="@drawable/blue_round"
+            android:onClick="onClick"
+            android:text="Call"
+            android:textColor="@color/white"
+            android:textSize="32px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ExpandableListView
+            android:id="@+id/liveScoreList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0px"
+            android:groupIndicator="@null"
+            android:listSelector="@android:color/transparent"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/noActiveLanes"
+            android:layout_width="550px"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="32px"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

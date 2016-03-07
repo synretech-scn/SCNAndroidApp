@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:id="@+id/root"
+    tools:context="com.tribaltech.android.scnstrikefirst.Wallet">
+
+
+    <RelativeLayout
+        android:id="@+id/noItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="550px"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="No items found."
+            android:textColor="@color/white"
+            android:textSize="32px" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/itemsList"
+        android:layout_above="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"></ListView>
+
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30px"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/submit"
+        android:layout_width="350px"
+        android:layout_height="110px"
+        android:layout_marginTop="50px"
+        android:background="@drawable/blue_round"
+        android:onClick="onClick"
+        android:tag="mwar"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textSize="36px" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AndroidAsyncHttp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/AndroidAsyncHttp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

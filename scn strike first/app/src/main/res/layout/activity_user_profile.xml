@@ -1,0 +1,221 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context="com.tribaltech.android.scnstrikefirst.UserProfile">
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:background="@drawable/status_bar"
+        android:layout_height="90px">
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="45px"
+            android:layout_height="33px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/game_buttons_margin"
+            android:background="@drawable/menu_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="User Profile"
+            android:textColor="#FFF"
+            android:textSize="35px" />
+        
+        <TextView
+            android:id="@+id/edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/game_buttons_margin"
+            android:gravity="center"
+            android:clickable="true"
+            android:textColor="@drawable/text_color_selector"
+            android:textSize="25px"
+            android:onClick="onClick"
+            android:text="Edit"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="400.5px"
+        android:layout_below="@id/topHeaderParent"
+        android:background="@drawable/cover"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="15px"
+            android:layout_height="133.5px">
+
+            <ImageView
+                android:id="@+id/profile_dp"
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="45px"
+                android:contentDescription="Your Photo"
+                android:src="@drawable/circular_white" />
+            <!--android:background="@drawable/profile_icon_selector"-->
+            <TextView
+                android:id="@+id/username"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="194.5px"
+                android:text="Jason Rose"
+                android:textColor="#FFF"
+                android:textSize="38px" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="133.5px"
+            android:gravity="center"
+            android:layout_marginLeft="45px"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/email_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Email"
+                android:gravity="center_vertical"
+                android:textColor="#FFF"
+                android:textSize="25px" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="jason@xbowling.com"
+                android:textColor="#FFF"
+                android:textSize="35px" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45px"
+            android:src="@drawable/divider_full" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="133.5px"
+            android:gravity="center"
+            android:layout_marginLeft="45px"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/screen_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Screen Name"
+                android:gravity="center_vertical"
+                android:textColor="#FFF"
+                android:textSize="25px" />
+
+            <TextView
+                android:id="@+id/screen_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sharp Shooter"
+                android:textColor="#FFF"
+                android:textSize="35px" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/home_header"
+        android:layout_width="match_parent"
+        android:layout_height="48.6px"
+        android:background="@drawable/item_small_background"
+        android:layout_below="@id/cover">
+
+        <TextView
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home Centre"
+            android:layout_marginLeft="27px"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+
+        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/goBowlingParent"
+        android:layout_width="match_parent"
+        android:layout_height="142.2px"
+        android:layout_below="@id/home_header"
+        android:background="@drawable/item_large_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="45px">
+
+            <TextView
+                android:id="@+id/house_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AAMU Health and Wellness Centre"
+                android:textColor="@color/white"
+                android:textSize="35px" />
+
+            <TextView
+                android:id="@+id/area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:text="Alabama, United States"
+                android:textColor="@color/white"
+                android:textSize="25px" />
+
+            </LinearLayout>
+
+        <!--<View-->
+            <!--android:id="@+id/goBowling"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:onClick="onClick" />-->
+    </RelativeLayout>
+    <Button
+        android:id="@+id/change_pwd"
+        android:layout_width="452.7px"
+        android:layout_height="73px"
+        android:layout_marginTop="928.8px"
+        android:text="Change Password"
+        android:textSize="36px"
+        android:background="@drawable/blue_round"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:onClick="onClick"
+        android:tag="mhar" />
+</RelativeLayout>

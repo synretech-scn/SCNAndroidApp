@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="102.5px"
+    android:layout_height="100px"
+    android:layout_marginTop="8px"
+    android:layout_marginBottom="8px"
+    android:gravity="center"
+    android:background="@drawable/single_pin_background_round">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/pin_vertical_margin_coach"
+        android:id="@+id/firstrow1"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/firstpin7"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+
+        <Button
+            android:id="@+id/firstpin8"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:layout_marginLeft="@dimen/pin_horizontal_margin_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+
+        <Button
+            android:id="@+id/firstpin9"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:layout_marginLeft="@dimen/pin_horizontal_margin_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+
+        <Button
+            android:id="@+id/firstpin10"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:layout_marginLeft="@dimen/pin_horizontal_margin_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/firstrow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstrow1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/pin_vertical_margin_coach"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/firstpin4"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:layout_weight="1"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+
+        <Button
+            android:id="@+id/firstpin5"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:layout_marginLeft="@dimen/pin_horizontal_margin_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+
+        <Button
+            android:id="@+id/firstpin6"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:layout_marginLeft="@dimen/pin_horizontal_margin_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/firstrow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstrow2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/pin_vertical_margin_coach"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/firstpin2"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+
+        <Button
+            android:id="@+id/firstpin3"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:layout_marginLeft="@dimen/pin_horizontal_margin_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/firstrow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstrow3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/pin_vertical_margin_coach"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/firstpin1"
+            android:layout_width="@dimen/pin_diameter_coach"
+            android:layout_height="@dimen/pin_diameter_coach"
+            android:background="@drawable/ball_up_small"
+            android:clickable="false"
+            android:focusable="false"
+            android:tag="mlar" />
+    </LinearLayout>
+</RelativeLayout>
+

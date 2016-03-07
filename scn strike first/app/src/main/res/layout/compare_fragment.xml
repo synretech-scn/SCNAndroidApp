@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rootChild"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/drop_separator_height"
+            android:background="@drawable/dropdown_separator" />
+
+        <RelativeLayout
+            android:id="@+id/spinParent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height">
+
+            <EditText
+                android:id="@+id/spinnerText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dropdown_height"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/item_large_background"
+                android:ems="10"
+                android:focusable="false"
+                android:hint=""
+                android:inputType="textNoSuggestions"
+                android:paddingLeft="30px"
+                android:paddingRight="70px"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dropdown_text_size"></EditText>
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="22px"
+                android:layout_height="45px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30px"
+                android:background="@drawable/drop_arrow_selector"
+                android:tag="mlar" />
+
+            <Spinner
+                android:id="@+id/compareSpinner"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dropdown_height"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="#0000"
+                android:popupBackground="#000000"
+                android:spinnerMode="dropdown" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_height="@dimen/drop_separator_height"
+                android:background="@drawable/dropdown_separator" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_below="@+id/spinParent"
+            android:id="@+id/individualParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_marginTop="21px"
+                android:id="@+id/tabs"
+                android:layout_centerHorizontal="true"
+                android:layout_width="522px"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="21px"
+                android:layout_height="67px"
+                android:visibility="visible"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/allxbowlerBtn"
+                    android:layout_width="0px"
+                    android:layout_weight="1"
+                    android:text="All XBowlers"
+                    android:textColor="@color/white"
+                    android:textSize="30px"
+                    android:onClick="onClick"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/blue_left_outline_semi_round"
+                    android:tag="mwar" />
+
+                <Button
+                    android:id="@+id/friendsBtn"
+                    android:layout_width="0px"
+                    android:text="My Friends"
+                    android:textColor="@color/white"
+                    android:textSize="30px"
+                    android:onClick="onClick"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/blue_right_semi_round"
+                    android:tag="mwar" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/searchParent"
+                android:layout_width="match_parent"
+                android:layout_below="@id/tabs"
+                android:background="@drawable/item_small_background"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/searchIcon"
+                    android:layout_width="31px"
+                    android:layout_height="31px"
+                    android:layout_marginLeft="30px"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/search_icon" />
+
+                <EditText
+                    android:layout_marginLeft="5px"
+                    android:layout_toRightOf="@+id/searchIcon"
+                    android:id="@+id/searchBowler"
+                    android:visibility="visible"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="101px"
+                    android:background="@color/transparent"
+                    android:ems="10"
+                    android:hint="Search"
+                    android:imeActionLabel="Search"
+                    android:paddingLeft="10px"
+                    android:paddingRight="10px"
+                    android:singleLine="true"
+                    android:tag="mwar"
+                    android:textColorHint="@color/white"
+                    android:textSize="32px">
+
+                </EditText>
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/listViewFriends"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:cacheColorHint="#0000"
+                android:visibility="gone"
+                android:layout_above="@+id/makeComparison"
+                android:layout_below="@+id/searchParent"
+                android:listSelector="@android:color/transparent"></ListView>
+
+            <RelativeLayout
+                android:id="@+id/makeComparison"
+                android:layout_width="match_parent"
+                android:layout_height="101px"
+                android:onClick="onClick"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/challenges_selector"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/bottomLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:textColor="@color/white"
+                    android:text="Make Comparison"
+                    android:textSize="35px" />
+
+                <Button
+                    android:layout_width="21.5px"
+                    android:layout_height="36px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22px"
+                    android:layout_marginRight="20px"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@drawable/home_arrow_selector" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/allBowlerParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinParent"
+            android:layout_marginTop="30px"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/newGameLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/drop_separator_height"
+                    android:background="@drawable/dropdown_separator" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dropdown_height">
+
+                    <EditText
+                        android:id="@+id/country"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dropdown_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/item_large_background"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:hint="Select Country"
+                        android:inputType="textNoSuggestions"
+                        android:paddingLeft="30px"
+                        android:paddingRight="70px"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dropdown_text_size"></EditText>
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="22px"
+                        android:layout_height="45px"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="30px"
+                        android:background="@drawable/drop_arrow_selector"
+                        android:tag="mlar" />
+
+                    <Spinner
+                        android:id="@+id/countries"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/dropdown_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="#0000"
+                        android:popupBackground="#000000"
+                        android:spinnerMode="dropdown" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/drop_separator_height"
+                    android:background="@drawable/dropdown_separator" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dropdown_height">
+
+                    <EditText
+                        android:id="@+id/state"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dropdown_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/item_large_background"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:hint="Select State"
+                        android:inputType="textNoSuggestions"
+                        android:paddingLeft="30px"
+                        android:paddingRight="70px"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dropdown_text_size"></EditText>
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="22px"
+                        android:layout_height="45px"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="30px"
+                        android:background="@drawable/drop_arrow_selector"
+                        android:tag="mlar" />
+
+                    <Spinner
+                        android:id="@+id/states"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dropdown_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="#0000"
+                        android:popupBackground="#000000"
+                        android:spinnerMode="dropdown" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/drop_separator_height"
+                    android:background="@drawable/dropdown_separator" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dropdown_height">
+
+                    <EditText
+                        android:id="@+id/center"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dropdown_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/item_large_background"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:hint="Select Center"
+                        android:inputType="textNoSuggestions"
+                        android:paddingLeft="30px"
+                        android:paddingRight="70px"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dropdown_text_size"></EditText>
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="22px"
+                        android:layout_height="45px"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="30px"
+                        android:background="@drawable/drop_arrow_selector"
+                        android:tag="mlar" />
+
+                    <Spinner
+                        android:id="@+id/centres"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dropdown_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="#0000"
+                        android:popupBackground="#000000"
+                        android:spinnerMode="dropdown" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/drop_separator_height"
+                    android:background="@drawable/dropdown_separator" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/makeComparisonAll"
+                android:layout_width="match_parent"
+                android:layout_height="101px"
+                android:onClick="onClick"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/challenges_selector"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/bottomLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:textColor="@color/white"
+                    android:text="Make Comparison"
+                    android:textSize="35px" />
+
+                <Button
+                    android:layout_width="21.5px"
+                    android:layout_height="36px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22px"
+                    android:layout_marginRight="20px"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@drawable/home_arrow_selector" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/errorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="You have not added any friends yet."
+        android:textColor="#FFF"
+        android:textSize="35px"
+        android:visibility="visible" />
+</RelativeLayout>

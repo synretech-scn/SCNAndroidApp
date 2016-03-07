@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="110px"
+    android:background="@drawable/item_large_background" >
+
+    <Button
+        android:id="@+id/selectBox"
+        android:layout_width="81px"
+        android:layout_height="81px"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10px"
+        android:tag="off"
+        android:background="@drawable/box" />
+
+    <LinearLayout
+        android:id="@+id/bowlerParent"
+        android:layout_width="280px"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="101px"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/competitionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ace"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="36px" />
+
+        <TextView
+            android:id="@+id/bowlerName"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:text="Ace256"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/handicapParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="421px"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/handicapScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="36px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Handicap"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="34px"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/expirationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="36px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expires"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+    </LinearLayout>
+
+    <View
+        android:layout_alignLeft="@+id/bowlerParent"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+</RelativeLayout>

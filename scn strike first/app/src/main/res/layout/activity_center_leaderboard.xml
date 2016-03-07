@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root"
+    android:background="@drawable/bg"
+    tools:context="com.tribaltech.android.scnstrikefirst.CenterLeaderboard">
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="visible"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:text="Centre Leaderboard"
+            android:layout_width="350px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20px"
+        android:orientation="horizontal"
+        android:id="@+id/centerfragmentParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/getLeaderboard"
+        android:layout_width="370px"
+        android:layout_height="110px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50px"
+        android:background="@drawable/blue_round"
+        android:onClick="onClick"
+        android:tag="mwar"
+        android:text="Get Leaderboard"
+        android:textColor="@color/white"
+        android:textSize="36px" />
+</LinearLayout>

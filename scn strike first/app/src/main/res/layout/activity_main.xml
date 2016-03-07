@@ -1,0 +1,871 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/backgroundLayout"
+        android:background="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/topHeaderParent"
+                android:layout_width="match_parent"
+                android:layout_height="90px"
+                android:background="@drawable/status_bar">
+
+                <Button
+                    android:id="@+id/back"
+                    android:visibility="gone"
+                    android:layout_width="90px"
+                    android:layout_height="90px"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/back_selector"
+                    android:onClick="onClick"
+                    android:textSize="@dimen/game_buttons_text_size" />
+
+                <Button
+                    android:id="@+id/menu"
+                    android:layout_width="45px"
+                    android:visibility="visible"
+                    android:layout_height="33px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/game_buttons_margin"
+                    android:background="@drawable/menu_selector"
+                    android:onClick="toggle"
+                    android:textSize="@dimen/game_buttons_text_size" />
+
+                <Button
+                    android:id="@+id/back"
+                    android:visibility="gone"
+                    android:layout_width="90px"
+                    android:layout_height="90px"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/back_selector"
+                    android:onClick="onClick"
+                    android:textSize="@dimen/game_buttons_text_size" />
+
+                <TextView
+                    android:id="@+id/centerName"
+                    android:layout_width="300px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40px"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="#FFF"
+                    android:textSize="36px" />
+
+                <RelativeLayout
+                    android:id="@+id/sideMenu"
+                    android:layout_width="63px"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_marginRight="@dimen/game_buttons_margin"
+                    android:layout_alignParentRight="true"
+                    android:onClick="onClick">
+
+                    <Button
+                        android:layout_width="63px"
+                        android:layout_height="17px"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:background="@drawable/side_menu_selector" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nameParent"
+                android:layout_width="match_parent"
+                android:layout_height="135px">
+
+                <Button
+                    android:id="@+id/h2hView"
+                    android:layout_width="154px"
+                    android:layout_height="54px"
+                    android:layout_marginLeft="10px"
+                    android:layout_toRightOf="@+id/bowlerName"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/round_selector"
+                    android:onClick="onClick"
+                    android:text="H2H View"
+                    android:visibility="gone"
+                    android:textSize="@dimen/game_buttons_text_size" />
+
+                <TextView
+                    android:id="@+id/bowlerName"
+                    android:layout_width="250px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40px"
+                    android:singleLine="true"
+                    android:textColor="#FFF"
+                    android:textSize="36px" />
+
+                <TextView
+                    android:id="@+id/totalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40px"
+                    android:singleLine="true"
+                    android:textColor="#FFF"
+                    android:textSize="50px"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/frameView"
+                android:layout_width="match_parent"
+                android:layout_height="150px"
+                android:gravity="center"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/scoringParent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20px">
+
+                        <Button
+                            android:id="@+id/previousThrow"
+                            android:layout_width="216px"
+                            android:layout_height="54px"
+                            android:layout_marginLeft="@dimen/game_buttons_margin"
+                            android:background="@drawable/round_selector"
+                            android:onClick="onClick"
+                            android:text="Previous Throw"
+                            android:textSize="@dimen/game_buttons_text_size" />
+
+                        <Button
+                            android:id="@+id/previousFrame"
+                            android:layout_width="216px"
+                            android:layout_height="54px"
+                            android:layout_marginLeft="@dimen/game_buttons_margin"
+                            android:background="@drawable/round_selector"
+                            android:onClick="onClick"
+                            android:text="Previous Frame"
+                            android:textSize="@dimen/game_buttons_text_size"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/throwLabel"
+                            android:layout_width="163px"
+                            android:layout_height="54px"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/white_round"
+                            android:text="1st Throw"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/game_buttons_text_size" />
+
+                        <Button
+                            android:id="@+id/nextThrow"
+                            android:layout_width="216px"
+                            android:layout_height="54px"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/game_buttons_margin"
+                            android:background="@drawable/round_selector"
+                            android:onClick="onClick"
+                            android:text="Next Throw"
+                            android:textSize="@dimen/game_buttons_text_size" />
+
+                        <Button
+                            android:id="@+id/done"
+                            android:layout_width="216px"
+                            android:layout_height="54px"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/game_buttons_margin"
+                            android:background="@drawable/round_selector"
+                            android:onClick="onClick"
+                            android:text="Done"
+                            android:textSize="@dimen/game_buttons_text_size"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/nextFrame"
+                            android:layout_width="216px"
+                            android:layout_height="54px"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/game_buttons_margin"
+                            android:background="@drawable/round_selector"
+                            android:onClick="onClick"
+                            android:text="Next Frame"
+                            android:textSize="@dimen/game_buttons_text_size"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/first_ball_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15px"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true">
+
+                            <LinearLayout
+                                android:id="@+id/firstrow1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/pin_vertical_margin_half"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/pin7"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+
+                                <Button
+                                    android:id="@+id/pin8"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_marginLeft="@dimen/pin_horizontal_margin"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+
+                                <Button
+                                    android:id="@+id/pin9"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_marginLeft="@dimen/pin_horizontal_margin"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+
+                                <Button
+                                    android:id="@+id/pin10"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_marginLeft="@dimen/pin_horizontal_margin"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/firstrow2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/firstrow1"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/pin_vertical_margin"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/pin4"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+
+                                <Button
+                                    android:id="@+id/pin5"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_marginLeft="@dimen/pin_horizontal_margin"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+
+                                <Button
+                                    android:id="@+id/pin6"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_marginLeft="@dimen/pin_horizontal_margin"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/firstrow3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/firstrow2"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/pin_vertical_margin"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/pin2"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+
+                                <Button
+                                    android:id="@+id/pin3"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_marginLeft="@dimen/pin_horizontal_margin"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/firstrow4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/firstrow3"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/pin_vertical_margin"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/pin1"
+                                    android:layout_width="@dimen/pin_diameter"
+                                    android:layout_height="@dimen/pin_diameter"
+                                    android:layout_marginBottom="@dimen/pin_vertical_margin_half"
+                                    android:background="@drawable/bowling_pin"
+                                    android:clickable="false"
+                                    android:focusable="false"
+                                    android:tag="mlar" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <ListView
+                        android:id="@+id/tagsListView"
+                        android:visibility="gone"
+                        android:dividerHeight="0dp"
+                        android:divider="@null"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ListView>
+
+
+                    <RelativeLayout
+                        android:id="@+id/strikeSpareParentPro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginRight="30px"
+                        android:layout_marginTop="-80px"
+                        android:visibility="visible"
+                        android:focusable="false">
+
+                        <LinearLayout
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                android:tag="off"
+                                android:id="@+id/pocket"
+                                android:layout_width="184.5px"
+                                android:layout_height="54px"
+                                android:background="@drawable/black_round"
+                                android:onClick="pocketBrookClick"
+                                android:text="Pocket"
+                                android:textSize="@dimen/game_buttons_text_size" />
+
+                            <Button
+                                android:tag="off"
+                                android:layout_marginTop="40px"
+                                android:id="@+id/brooklyn"
+                                android:layout_width="184.5px"
+                                android:layout_height="54px"
+                                android:background="@drawable/black_round"
+                                android:onClick="pocketBrookClick"
+                                android:text="Brooklyn"
+                                android:textSize="@dimen/game_buttons_text_size" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                android:id="@+id/strikePro"
+                                android:layout_width="184.5px"
+                                android:layout_height="54px"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/round_selector"
+                                android:onClick="onClick"
+                                android:text="Strike"
+                                android:textSize="@dimen/game_buttons_text_size" />
+
+                            <Button
+                                android:id="@+id/sparePro"
+                                android:layout_width="184.5px"
+                                android:layout_height="54px"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/round_selector"
+                                android:onClick="onClick"
+                                android:text="Spare"
+                                android:textSize="@dimen/game_buttons_text_size"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:layout_marginTop="40px"
+                                android:layout_width="185px"
+                                android:background="@drawable/black_round"
+                                android:layout_alignParentRight="true"
+                                android:layout_height="54px">
+
+                                <EditText
+                                    android:id="@+id/ballNameText"
+                                    android:layout_width="185px"
+                                    android:layout_height="@dimen/dropdown_height"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:ems="10"
+                                    android:background="#0000"
+                                    android:focusable="false"
+                                    android:hint="Ball Name"
+                                    android:inputType="textNoSuggestions"
+                                    android:paddingLeft="30px"
+                                    android:gravity="center"
+                                    android:paddingRight="40px"
+                                    android:singleLine="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="25px"></EditText>
+
+                                <Button
+                                    android:id="@+id/button6"
+                                    android:layout_width="22px"
+                                    android:layout_height="45px"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15px"
+                                    android:background="@drawable/drop_arrow_selector"
+                                    android:tag="mlar" />
+
+                                <Spinner
+                                    android:id="@+id/ballType"
+                                    android:layout_width="185px"
+                                    android:layout_height="@dimen/dropdown_height"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="#0000"
+                                    android:popupBackground="#000000"
+                                    android:spinnerMode="dropdown" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/strikeSpareParent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10px"
+                        android:visibility="gone"
+                        android:focusable="false">
+
+                        <Button
+                            android:id="@+id/strike"
+                            android:layout_width="184.5px"
+                            android:layout_height="54px"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/round_selector"
+                            android:onClick="onClick"
+                            android:text="Strike"
+                            android:textSize="@dimen/game_buttons_text_size" />
+
+                        <Button
+                            android:id="@+id/spare"
+                            android:layout_width="184.5px"
+                            android:layout_height="54px"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/round_selector"
+                            android:onClick="onClick"
+                            android:text="Spare"
+                            android:textSize="@dimen/game_buttons_text_size"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/summaryParent"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20px">
+
+                        <Button
+                            android:id="@+id/backToPinView"
+                            android:onClick="onClick"
+                            android:layout_marginLeft="30px"
+                            android:layout_width="170px"
+                            android:layout_height="54px"
+                            android:background="@drawable/blue_round"
+                            android:text="Pin View"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/game_buttons_text_size" />
+
+                        <Button
+                            android:layout_width="220px"
+                            android:layout_height="54px"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/white_round"
+                            android:text="Game Summary"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/game_buttons_text_size" />
+
+                        <Button
+                            android:id="@+id/h2hSummary"
+                            android:onClick="onClick"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="30px"
+                            android:layout_width="170px"
+                            android:layout_height="54px"
+                            android:background="@drawable/blue_round"
+                            android:text="Challenges"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/game_buttons_text_size" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px" />
+
+                    <ListView
+                        android:id="@+id/summaryList"
+                        android:layout_width="match_parent"
+                        android:layout_height="370px"
+                        android:divider="@null"
+                        android:visibility="visible"
+                        android:listSelector="@android:color/transparent"></ListView>
+
+                    <LinearLayout
+                        android:id="@+id/h2HChallengeParent"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:layout_height="370px">
+
+                        <TextView
+                            android:id="@+id/noChallengeText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="It looks like you haven&apos;t entered any Challenges yet!"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:textColor="@color/white"
+                            android:textSize="36px" />
+
+                        <LinearLayout
+                            android:id="@+id/liveChallengeParent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150px"
+                            android:layout_marginTop="20px"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <Button
+                                android:layout_width="140px"
+                                android:layout_height="140px"
+                                android:layout_marginLeft="30px"
+                                android:background="@drawable/h2h_live" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="150px"
+                                android:layout_marginLeft="7px"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3px"
+                                    android:text="H2H Live"
+                                    android:textColor="@color/white"
+                                    android:textSize="28px"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/liveProgress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3px"
+                                    android:text="In Progress"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/challenge_textsize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/postedChallengeParent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150px"
+                            android:layout_marginTop="20px"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <Button
+                                android:layout_width="140px"
+                                android:layout_height="140px"
+                                android:layout_marginLeft="30px"
+                                android:background="@drawable/h2h_posted" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="150px"
+                                android:layout_marginLeft="7px"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/xbowlText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3px"
+                                    android:text="H2H Posted"
+                                    android:textColor="@color/white"
+                                    android:textSize="28px"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/postedProgress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3px"
+                                    android:text="In Progress"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/challenge_textsize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bowlAgainParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="51px"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/postGame"
+                        android:layout_width="630px"
+                        android:layout_height="80px"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/blue_round"
+                        android:onClick="onClick"
+                        android:text="Post as a Challenge"
+                        android:textColor="@color/white"
+                        android:textSize="36px" />
+
+                    <RelativeLayout
+                        android:id="@+id/bowlAgain"
+                        android:layout_below="@+id/postGame"
+                        android:layout_width="270px"
+                        android:layout_height="80px"
+                        android:layout_marginTop="40px"
+                        android:layout_alignLeft="@+id/postGame"
+                        android:background="@drawable/white_blue_round"
+                        android:onClick="onClick"
+                        android:clickable="true">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Bowl Again"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/black"
+                            android:textSize="36px" />
+
+                        <!--<TextView
+                            android:layout_marginTop="-10px"
+                            android:layout_below="@+id/postText"
+                            android:layout_centerHorizontal="true"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="as a Challenge"
+                            android:textColor="@color/black"
+                            android:textSize="25px" />-->
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/shareOnFb"
+                        android:layout_marginTop="40px"
+                        android:layout_width="270px"
+                        android:layout_height="80px"
+                        android:layout_below="@+id/postGame"
+                        android:layout_alignRight="@+id/postGame"
+                        android:background="@drawable/white_blue_round"
+                        android:onClick="onClick"
+                        android:text="Share"
+                        android:textColor="@color/black"
+                        android:textSize="36px" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15px"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/foul"
+                    android:layout_width="184.5px"
+                    android:layout_height="54px"
+                    android:layout_marginLeft="@dimen/game_buttons_margin"
+                    android:background="@drawable/round_selector"
+                    android:onClick="onClick"
+                    android:text="Foul"
+                    android:textSize="@dimen/game_buttons_text_size" />
+
+                <Button
+                    android:layout_width="184.5px"
+                    android:layout_height="54px"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/round_selector"
+                    android:text="Ball Type"
+                    android:textSize="@dimen/game_buttons_text_size" />
+
+                <Button
+                    android:id="@+id/brooklyn"
+                    android:layout_width="184.5px"
+                    android:layout_height="54px"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/game_buttons_margin"
+                    android:background="@drawable/round_selector"
+                    android:onClick="onClick"
+                    android:text="Brooklyn"
+                    android:textSize="@dimen/game_buttons_text_size" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/challengeParent"
+            android:layout_width="match_parent"
+            android:layout_height="101px"
+            android:onClick="onClick"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/challenges_selector"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/challengeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px"
+                android:clickable="false"
+                android:focusable="false"
+                android:textColor="@color/white"
+                android:text="Enter Challenges"
+                android:textSize="35px" />
+
+            <Button
+                android:layout_width="21.5px"
+                android:layout_height="36px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22px"
+                android:layout_marginRight="20px"
+                android:clickable="false"
+                android:focusable="false"
+                android:background="@drawable/home_arrow_selector" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/gameSummary"
+            android:layout_width="630px"
+            android:layout_height="80px"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="33px"
+            android:background="@drawable/blue_round"
+            android:onClick="onClick"
+            android:text="Game Summary"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:textSize="36px" />
+
+        <Button
+            android:id="@+id/coachView"
+            android:layout_width="630px"
+            android:layout_height="80px"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="33px"
+            android:background="@drawable/blue_round"
+            android:onClick="onClick"
+            android:text="Coach View"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:textSize="36px" />
+
+
+        <Button
+            android:id="@+id/lastFrameRight"
+            android:layout_width="0px"
+            android:layout_height="0px" />
+
+        <Button
+            android:id="@+id/lastFrameLeft"
+            android:layout_width="0px"
+            android:layout_height="0px" />
+    </RelativeLayout>
+</RelativeLayout>

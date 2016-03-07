@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toggleLay"
+            android:layout_marginBottom="20px"
+            android:layout_width="match_parent"
+            android:layout_height="108px"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/equipSett"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/selected_background"
+                android:gravity="center"
+                android:onClick="statsTab"
+                android:text="Equipment Settings"
+                android:textColor="@color/white"
+                android:textSize="26px" />
+
+            <Button
+                android:id="@+id/otherSett"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_marginLeft="5px"
+                android:layout_marginRight="5px"
+                android:layout_height="match_parent"
+                android:background="@drawable/pending_background"
+                android:gravity="center"
+                android:onClick="statsTab"
+                android:text="Other Settings"
+                android:textColor="@color/white"
+                android:textSize="26px" />
+
+            <Button
+                android:id="@+id/exportSett"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/pending_background"
+                android:gravity="center"
+                android:onClick="statsTab"
+                android:text="Export Stats"
+                android:textColor="@color/white"
+                android:textSize="26px" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/otherSettParent"
+            android:layout_below="@+id/toggleLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_marginLeft="30px"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px">
+
+
+                <LinearLayout
+                    android:id="@+id/otherRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Your Subscription ends on:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sett_text_size_large" />
+
+                    <TextView
+                        android:id="@+id/subEndDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10px"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sett_text_size_large" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/extendSub"
+                    android:layout_width="250px"
+                    android:layout_below="@+id/otherRow1"
+                    android:layout_height="60px"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20px"
+                    android:background="@drawable/blue_round"
+                    android:text="Extend Subscription"
+                    android:layout_marginTop="20px"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sett_text_size" />
+
+                <TextView
+                    android:layout_marginTop="20px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Do you want to track your scores based on Ball Type?"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sett_text_size_large" />
+
+                <LinearLayout
+                    android:id="@+id/otherRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/extendSub"
+                    android:layout_marginTop="10px"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/ballTypeYes"
+                        android:layout_width="81px"
+                        android:layout_height="81px"
+                        android:background="@drawable/box"
+                        android:tag="off" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15px"
+                        android:text="Yes"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/sett_text_size_large" />
+
+                    <Button
+                        android:id="@+id/ballTypeNo"
+                        android:layout_width="81px"
+                        android:layout_height="81px"
+                        android:layout_marginLeft="95px"
+                        android:background="@drawable/box"
+                        android:tag="off" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="25px"
+                        android:text="No"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/sett_text_size_large" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Do you want to track your scores based on Oil Pattern?"
+                    android:textColor="#fff"
+                    android:layout_marginTop="10px"
+                    android:textSize="@dimen/sett_text_size_large" />
+
+
+                <LinearLayout
+                    android:id="@+id/otherRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/otherRow2"
+                    android:layout_marginTop="10px"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/oilPatternYes"
+                        android:layout_width="81px"
+                        android:layout_height="81px"
+                        android:background="@drawable/box"
+                        android:tag="off" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15px"
+                        android:text="Yes"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/sett_text_size_large" />
+
+                    <Button
+                        android:id="@+id/oilPatternNo"
+                        android:layout_width="81px"
+                        android:layout_height="81px"
+                        android:layout_marginLeft="95px"
+                        android:background="@drawable/box"
+                        android:tag="off" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="25px"
+                        android:text="No"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/sett_text_size_large" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="630px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Do you want to track your Pocket/Brooklyn Percentage?"
+                    android:textColor="#fff"
+                    android:layout_marginTop="10px"
+                    android:textSize="@dimen/sett_text_size_large" />
+
+                <LinearLayout
+                    android:id="@+id/otherRow4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/otherRow3"
+                    android:layout_marginTop="10px"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/pocketYes"
+                        android:layout_width="81px"
+                        android:layout_height="81px"
+                        android:background="@drawable/box"
+                        android:tag="off" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15px"
+                        android:text="Yes"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/sett_text_size_large" />
+
+                    <Button
+                        android:id="@+id/pocketNo"
+                        android:layout_width="81px"
+                        android:layout_height="81px"
+                        android:background="@drawable/box"
+                        android:layout_marginLeft="95px"
+                        android:tag="off" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="25px"
+                        android:text="No"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/sett_text_size_large" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/saveOther"
+                    android:layout_width="273px"
+                    android:layout_height="90px"
+                    android:text="Save"
+                    android:textSize="36px"
+                    android:layout_marginBottom="40px"
+                    android:layout_marginTop="60px"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/blue_round"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/equipParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="133px"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/scrollChild"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <RelativeLayout
+                    android:id="@+id/bowlingBall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/bowlingBallHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="68px"
+                        android:background="@drawable/item_small_background"
+                        android:layout_centerHorizontal="true"
+                        android:tag="close">
+
+                        <TextView
+                            android:id="@+id/lane_no_selected"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="60px"
+                            android:text="Bowling Ball Name"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/sett_text_size_large" />
+
+                        <Button
+                            android:id="@+id/addNewBall"
+                            android:layout_width="120px"
+                            android:layout_height="35px"
+                            android:layout_marginRight="40px"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/indicator"
+                            android:text="Add New"
+                            android:background="@drawable/blue_round"
+                            android:textColor="@color/white"
+                            android:textSize="23px" />
+
+                        <Button
+                            android:id="@+id/indicator"
+                            android:layout_width="36px"
+                            android:layout_height="36px"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20px"
+                            android:background="@drawable/plus_selector"
+                            android:clickable="false"
+                            android:focusable="false"></Button>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/bowlingBallContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60px"
+                        android:visibility="gone">
+
+                        <ListView
+                            android:id="@+id/bowlingBallList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20px"
+                            android:divider="@null"
+                            android:listSelector="@android:color/transparent"></ListView>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- Multi Pin Spare -->
+
+                <RelativeLayout
+                    android:id="@+id/patternName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bowlingBall"
+                    android:layout_marginTop="30px">
+
+                    <RelativeLayout
+                        android:id="@+id/patternNameHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="68px"
+                        android:background="@drawable/item_small_background"
+                        android:layout_centerHorizontal="true"
+                        android:tag="close">
+
+                        <TextView
+                            android:id="@+id/lane_no_selected"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="60px"
+                            android:text="Pattern Name"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/sett_text_size_large" />
+
+                        <Button
+                            android:id="@+id/addNewPattern"
+                            android:layout_width="120px"
+                            android:layout_height="35px"
+                            android:layout_marginRight="40px"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/indicator"
+                            android:text="Add New"
+                            android:background="@drawable/blue_round"
+                            android:textColor="@color/white"
+                            android:textSize="23px" />
+
+                        <Button
+                            android:id="@+id/indicator"
+                            android:layout_width="36px"
+                            android:layout_height="36px"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20px"
+                            android:background="@drawable/plus_selector"
+                            android:clickable="false"
+                            android:focusable="false"></Button>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/patternNameContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60px"
+                        android:visibility="gone">
+
+
+                        <ListView
+                            android:id="@+id/patternNameList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20px"
+                            android:divider="@null"
+                            android:listSelector="@android:color/transparent"></ListView>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- Splits -->
+
+                <RelativeLayout
+                    android:id="@+id/splits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/patternName"
+                    android:layout_marginTop="30px"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/splitsHeader"
+                        android:layout_width="930px"
+                        android:layout_height="45px"
+                        android:layout_centerHorizontal="true"
+                        android:tag="close">
+
+                        <TextView
+                            android:id="@+id/lane_no_selected"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="60px"
+                            android:text="Pattern Length"
+                            android:textColor="#fff"
+                            android:textSize="24px" />
+
+                        <TextView
+                            android:id="@+id/score"
+                            android:layout_width="21px"
+                            android:layout_height="12px"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10px"
+                            android:layout_toLeftOf="@+id/score"
+                            android:text="Tap to Show Status"
+                            android:textColor="#000"
+                            android:textSize="20px" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/splitsPinParent"
+                        android:layout_width="530px"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="60px"
+                        android:visibility="gone"></RelativeLayout>
+
+                    <ListView
+                        android:id="@+id/splitsList"
+                        android:layout_width="930px"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="60px"
+                        android:divider="@null"
+                        android:listSelector="@android:color/transparent"
+                        android:visibility="gone"></ListView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/exportSettParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toggleLay"
+            android:layout_marginTop="40px"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/otherRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0px"
+                    android:text="Export all User Stats :"
+                    android:textColor="#fff"
+                    android:textSize="32px" />
+
+                <Button
+                    android:id="@+id/exportStats"
+                    android:layout_width="250px"
+                    android:layout_height="80px"
+                    android:layout_marginLeft="80px"
+                    android:text="Export User Stats"
+                    android:background="@drawable/yellow_corner"
+                    android:textColor="@color/white"
+                    android:textSize="26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/otherRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otherRow1"
+                android:layout_marginTop="30px"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0px"
+                    android:text="Reset all User Stats :"
+                    android:textColor="#fff"
+                    android:textSize="32px" />
+
+                <Button
+                    android:id="@+id/resetStats"
+                    android:layout_width="250px"
+                    android:layout_height="80px"
+                    android:background="@drawable/red_corner"
+                    android:layout_marginLeft="95px"
+                    android:text="Reset User Stats"
+                    android:textColor="@color/white"
+                    android:textSize="26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/otherRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otherRow2"
+                android:layout_marginTop="30px"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0px"
+                    android:text="Share on Facebook :"
+                    android:textColor="#fff"
+                    android:textSize="32px" />
+
+                <Button
+                    android:id="@+id/shareOnFb"
+                    android:layout_width="250px"
+                    android:layout_height="80px"
+                    android:background="@drawable/blue_corner"
+                    android:layout_marginLeft="95px"
+                    android:text="Facebook Share"
+                    android:textColor="@color/white"
+                    android:textSize="26px" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

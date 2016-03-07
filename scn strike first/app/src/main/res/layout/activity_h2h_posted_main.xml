@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="visible"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:id="@+id/challengeType"
+            android:textColor="#FFF"
+            android:textSize="36px"
+            android:text="H2H Posted" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/errorMsgH2H"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20px"
+        android:orientation="vertical"
+        android:layout_marginRight="20px"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:text="Add opponents to play against posted games across the world!"
+            android:textSize="38px"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:text="How it works:"
+            android:layout_marginTop="50px"
+            android:layout_marginBottom="50px"
+            android:textSize="40px"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#FFF"
+            android:text="1. On clickling Add opponents, you will see opponents you can select, including their average and handicap.\n\n2. Check the box beside the bowler you wish to compete against, then tap Select Opponent.\n\n3. Select the competition level.higher level requires more credit to enter, and you will get more reward points if you win them."
+            android:textSize="36px"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/headerStrip"
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:layout_below="@+id/topHeaderParent"
+        android:layout_marginTop="20px"
+        android:background="@drawable/item_small_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:text="Click to compare opponent's frame with yours"
+            android:textColor="#FFF"
+            android:textSize="25px" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/h2hPostedList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:layout_above="@+id/addOpponent"
+        android:layout_below="@+id/headerStrip"
+        android:dividerHeight="0px"
+        android:listSelector="@android:color/transparent"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/addOpponent"
+        android:layout_width="match_parent"
+        android:layout_height="101px"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/challenges_selector"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:clickable="false"
+            android:focusable="false"
+            android:textColor="@color/white"
+            android:text="Add Opponent"
+            android:textSize="35px" />
+
+        <Button
+            android:layout_width="21.5px"
+            android:layout_height="36px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22px"
+            android:layout_marginRight="20px"
+            android:clickable="false"
+            android:focusable="false"
+            android:background="@drawable/home_arrow_selector" />
+    </RelativeLayout>
+</RelativeLayout>

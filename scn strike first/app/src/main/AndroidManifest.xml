@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tribaltech.android.scnstrikefirst"
+    android:versionCode="404"
+    android:versionName="4.0.4">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- add  -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+
+    <!-- <meta-data -->
+    <!-- android:name="com.google.android.gms.version" -->
+    <!-- android:value="4323000" /> -->
+
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--
+     Creates a custom permission so only this app can receive its messages.
+
+     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+           where PACKAGE is the application's package name.
+    -->
+    <permission
+        android:name="com.tribaltech.android.scnstrikefirst.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.tribaltech.android.scnstrikefirst.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@android:style/Theme.Holo.NoActionBar">
+
+        <!-- Required for applications which use Google Play Services. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name="com.tribaltech.android.scnstrikefirst.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- <action android:name="com.google.android.c2dm.intent.REGISTER" /> -->
+                <category android:name="com.tribaltech.android.scnstrikefirst" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.tribaltech.android.scnstrikefirst.GcmIntentService" />
+
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.GameScreen"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.LiveScoreScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.GoBowling"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.ScreenMain"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.Splash"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="a6a2075e0c0ae065c8365b0959275dcb4275ce67" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="demotwitterlogin"
+                    android:scheme="x-demo-twitter" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.Login"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.LiveScore"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.ForgotPassword"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.LiveScoreList"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.CoachView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_coach_view"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.Leaderboard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.LeaderboardFilter"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.CenterLeaderboard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.Notifications"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.Tags"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.NotificationDetails"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.ChooseOpponent"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_choose_opponent"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.Challenges"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_challenges"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.H2HPostedMain"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_h2_hposted_main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.ChallengeView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_challenge_view"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.H2HLiveCreate"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_h2_hlive_create"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.UserStats"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_h2_hlive_create"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateHidden" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.UserStatsSelection"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_user_stats_selection"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.GraphActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.ComparisonActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.FilterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.UserStatsPackagePopup"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.FriendsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.UserProfile"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.EditProfile"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.ChangePassword"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.TellAfriendPopup"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.TellViaEmailPopup"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.EmailList"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.BuyCreditsPopup"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.webView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.USBC"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_graph"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.LeaderboardDetail"
+            android:label="@string/title_activity_leaderboard_detail" />
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.Wallet"
+            android:label="@string/title_activity_wallet"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.AddCenterWallet"
+            android:label="@string/title_activity_add_center_wallet"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.PointsTransact"
+            android:label="@string/title_activity_points_transact"></activity>
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.ConfirmPoints"
+            android:label="@string/title_activity_confirm_points"></activity>
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.RedeemImage"
+            android:label="@string/title_activity_redeem_image"></activity>
+        <activity
+            android:name="com.tribaltech.android.scnstrikefirst.WalletTransaction"
+            android:label="@string/title_activity_wallet_transaction"
+            android:screenOrientation="portrait"
+            ></activity>
+    </application>
+
+</manifest>

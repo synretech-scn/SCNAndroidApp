@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame10"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/frameText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/frame_top_height_land"
+        android:background="@drawable/pending_background_round"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="@color/pending_text_color"
+        android:textSize="@dimen/frame_textsize_coach"></TextView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/frame_top_height_land"
+        android:layout_marginTop="@dimen/throw_top_margin"
+        android:clickable="false"
+        android:focusable="false"
+        android:tag="10">
+
+        <TextView
+            android:id="@+id/throw1"
+            android:layout_width="33px"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2px"
+            android:background="@drawable/pending_background"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:textColor="@color/pending_text_color"
+            android:textSize="@dimen/frame_textsize_coach"></TextView>
+
+        <TextView
+            android:id="@+id/throw2"
+            android:layout_width="33px"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2px"
+            android:layout_toRightOf="@+id/throw1"
+            android:background="@drawable/pending_background"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:textColor="@color/pending_text_color"
+            android:textSize="@dimen/frame_textsize_coach" />
+
+        <TextView
+            android:id="@+id/throw3"
+            android:layout_width="33px"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/throw2"
+            android:background="@drawable/pending_background"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:textColor="@color/pending_text_color"
+            android:textSize="@dimen/frame_textsize_coach"></TextView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/frameScore"
+        android:layout_marginBottom="8px"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/frame_top_height_land"
+        android:layout_marginTop="@dimen/throw_bottom_margin"
+        android:background="@drawable/pending_background_bottom_round"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center"
+        android:textColor="@color/pending_text_color"
+        android:textSize="24px"></TextView>
+</LinearLayout>

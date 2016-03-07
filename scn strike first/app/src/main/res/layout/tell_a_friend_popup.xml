@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:clipChildren="false">
+
+    <RelativeLayout
+        android:background="@drawable/status_bar"
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px">
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="visible"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Share"
+            android:textColor="#FFF"
+            android:textSize="35px" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="100px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/emailClick"
+            android:layout_width="543px"
+            android:layout_height="76px"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/via_email_selector"
+            android:tag="mwar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="40px"
+            android:gravity="center"
+            android:text="Email your friends - if your friend signs up using their email address, you get 10 credits!"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+
+        <Button
+            android:id="@+id/fbClick"
+            android:layout_width="543px"
+            android:layout_height="76px"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/via_fb_selector"
+            android:tag="mwar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="40px"
+            android:gravity="center"
+            android:text="Post to Facebook - Get 5 credits per facebook message, for up to 30 credits per month!"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+
+        <Button
+            android:id="@+id/twClick"
+            android:layout_width="543px"
+            android:layout_height="76px"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/via_tw_selector"
+            android:tag="mwar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="40px"
+            android:gravity="center"
+            android:text="Send a Tweet - Get 5 credits per Twitter message, for up to 30 credits per month!"
+            android:textColor="#FFF"
+            android:textSize="36px" />
+    </LinearLayout>
+</LinearLayout>

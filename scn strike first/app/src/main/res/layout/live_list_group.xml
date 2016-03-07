@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="90px">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="68px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/item_small_background"
+        android:clickable="false"
+        android:focusable="false">
+
+        <TextView
+            android:id="@+id/laneNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:text="Lane 1"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+
+        <Button
+            android:id="@+id/indicator"
+            android:layout_width="36px"
+            android:layout_height="36px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20px"
+            android:background="@drawable/plus_selector"
+            android:clickable="false"
+            android:focusable="false"></Button>
+    </RelativeLayout>
+
+</RelativeLayout>

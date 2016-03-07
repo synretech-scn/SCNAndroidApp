@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/scoreParent"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="142px"
+        android:weightSum="3"
+        android:visibility="gone"
+        android:gravity="center"
+        android:background="@drawable/item_large_background">
+
+        <LinearLayout
+            android:id="@+id/frameParent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/avgScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="40px" />
+
+            <TextView
+                android:id="@+id/frameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avg. Score"
+                android:textColor="@color/white"
+                android:textSize="28px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/frameParent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/totalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="40px" />
+
+            <TextView
+                android:id="@+id/frameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Score"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="28px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/totalGames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="40px" />
+
+            <TextView
+                android:id="@+id/scoreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Games"
+                android:textColor="@color/white"
+                android:textSize="28px" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_below="@+id/scoreParent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <ListView
+        android:id="@+id/statsList"
+        android:layout_below="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20px"
+        android:divider="@null"
+        android:visibility="visible"
+        android:listSelector="@android:color/transparent"></ListView>
+
+    <TextView
+        android:id="@+id/errorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="40px"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="You have no stats. Please play more games."
+        android:textColor="#FFF"
+        android:textSize="40px"
+        android:visibility="gone" />
+
+</RelativeLayout>

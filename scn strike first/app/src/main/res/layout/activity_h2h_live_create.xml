@@ -1,0 +1,272 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context="com.tribaltech.android.scnstrikefirst.ChallengeView">
+
+    <RelativeLayout
+        android:id="@+id/topHeaderParent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/status_bar">
+
+        <Button
+            android:id="@+id/back"
+            android:visibility="visible"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector"
+            android:onClick="onClick"
+            android:textSize="@dimen/game_buttons_text_size" />
+
+        <TextView
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:gravity="center"
+            android:singleLine="true"
+            android:id="@+id/challengeType"
+            android:textColor="#FFF"
+            android:textSize="36px"
+            android:text="H2H Live" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_marginTop="20px"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <EditText
+        android:id="@+id/gameName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height"
+        android:background="@drawable/item_large_background"
+        android:ems="10"
+        android:hint="Game Name"
+        android:inputType="textCapCharacters"
+        android:paddingLeft="30px"
+        android:paddingRight="280px"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dropdown_text_size" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/oppCount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Number of Opponents"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/opponentSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/playMode"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Input Type"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/playModeSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/credits"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Credit Amount"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/creditSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dropdown_height">
+
+        <EditText
+            android:id="@+id/scoringMode"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/item_large_background"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Scoring Mode"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="30px"
+            android:paddingRight="70px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dropdown_text_size"></EditText>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="22px"
+            android:layout_height="45px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:background="@drawable/drop_arrow_selector"
+            android:tag="mlar" />
+
+        <Spinner
+            android:id="@+id/scoringSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dropdown_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#0000"
+            android:popupBackground="#000000"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_separator_height"
+        android:background="@drawable/dropdown_separator" />
+
+
+
+
+    <Button
+        android:id="@+id/createGame"
+        android:layout_width="350px"
+        android:layout_height="110px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50px"
+        android:background="@drawable/blue_round"
+        android:onClick="onClick"
+        android:tag="mwar"
+        android:text="Create game"
+        android:textColor="@color/white"
+        android:textSize="36px" />
+
+
+</LinearLayout>

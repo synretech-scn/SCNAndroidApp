@@ -1,0 +1,68 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="frame_width">66px</dimen>
+    <dimen name="frame_width_land">103px</dimen>
+    <dimen name="frame_height">152px</dimen>
+    <dimen name="frame_top_height">49.5px</dimen>
+    <dimen name="frame_top_height_land">32px</dimen>
+    <dimen name="frame_top_width">67px</dimen>
+    <dimen name="frame_bottom_height">101px</dimen>
+    <dimen name="frame_bottom_width">67px</dimen>
+    <dimen name="throw_width">32px</dimen>
+    <dimen name="throw_width_land">50px</dimen>
+    <dimen name="frame_left_margin">1.25px</dimen>
+    <dimen name="frame_right_margin">2px</dimen>
+    <dimen name="frame_right_margin_land">13px</dimen>
+    <dimen name="frame_top_margin">0px</dimen>
+    <dimen name="frame_textsize">25px</dimen>
+    <dimen name="frame_textsize_coach">23px</dimen>
+    <dimen name="frame_throwmarginleft">10px</dimen>
+    <dimen name="frame_throwmargintop">10px</dimen>
+    <dimen name="frame_throwmarginbottom">10px</dimen>
+    <dimen name="frame_throwmarginright">10px</dimen>
+    <dimen name="sub_header_textsize">25px</dimen>
+    <dimen name="challenge_textsize">30px</dimen>
+    <dimen name="framescore_textsize">27px</dimen>
+    <dimen name="frametextview_marginleft">45px</dimen>
+    <dimen name="framescore_marginleft">550px</dimen>
+    <dimen name="framescore_margintop">3px</dimen>
+    <dimen name="score_text_size">26px</dimen>
+    <dimen name="circle_leftmargin">13px</dimen>
+    <dimen name="congrats_text">33px</dimen>
+    <dimen name="congrats_text_top">35px</dimen>
+    <dimen name="courier_text_size">24px</dimen>
+    <dimen name="pin_diameter">90px</dimen>
+    <dimen name="pin_diameter_land">63px</dimen>
+    <dimen name="pin_diameter_coach">15px</dimen>
+    <dimen name="pin_horizontal_margin">54px</dimen>
+    <dimen name="pin_horizontal_margin_land">20px</dimen>
+    <dimen name="pin_horizontal_margin_coach">8.5px</dimen>
+    <dimen name="pin_vertical_margin">31.5px</dimen>
+    <dimen name="pin_vertical_margin_land">15px</dimen>
+    <dimen name="pin_vertical_margin_coach">8px</dimen>
+    <dimen name="pin_vertical_margin_half">16px</dimen>
+    <dimen name="pin_vertical_margin_half_land">7.5px</dimen>
+    <dimen name="sidebar_left_margin">60px</dimen>
+    <dimen name="screen_width">720px</dimen>
+    <dimen name="screen_height">1134px</dimen>
+    <dimen name="sidebar_height">1196px</dimen>
+    <dimen name="throw_top_margin">2px</dimen>
+    <dimen name="throw_bottom_margin">2px</dimen>
+    <dimen name="dropdown_height">105px</dimen>
+    <dimen name="dropdown_text_size">30px</dimen>
+    <dimen name="game_buttons_margin">20px</dimen>
+    <dimen name="game_buttons_text_size">25px</dimen>
+    <dimen name="drop_separator_height">2px</dimen>
+    <dimen name="sidebar_item_height">99px</dimen>
+    <dimen name="sidebar_item_small">80px</dimen>
+    <dimen name="sidebar_item_text_size">32px</dimen>
+
+    <dimen name="pinview_height_land">101px</dimen>
+    <dimen name="pinview_margin_top_land">10px</dimen>
+
+    <dimen name="sett_text_size">26px</dimen>
+    <dimen name="sett_text_size_large">32px</dimen>
+</resources>
