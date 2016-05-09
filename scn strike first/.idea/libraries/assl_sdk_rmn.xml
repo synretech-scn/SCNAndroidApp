@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="assl_sdk_rmn">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/assl_sdk_rmn.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
